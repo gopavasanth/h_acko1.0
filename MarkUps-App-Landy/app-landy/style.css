@@ -522,13 +522,21 @@ img{
 /* HOW IT WORKS */
 /*--------------------*/
 
-
+#statistic-table {
+	/* background-image: url("assets/images/howit-works-bg.jpg"); */
+	background-repeat: repeat;
+	background-size: cover;
+	display: inline;
+	float: left;
+	padding: 70px 0;
+	width: 100%;
+}
 #howit-works {
 	background-attachment: fixed !important;
 	background-image: url("assets/images/howit-works-bg.jpg");
 	background-repeat: repeat;
 	background-size: cover;
-	color: #ffffff;
+	color: #000000;
 	display: inline;
 	float: left;
 	padding: 70px 0;
