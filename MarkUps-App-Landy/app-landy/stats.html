@@ -1,51 +1,97 @@
-<!DOCTYPE HTML>
-<html>
-<head>
+<!DOCTYPE html>
+<html lang="en-US">
+<body>
+
+<h1>acko statistics</h1>
+
+<div id="input">
+<!-- #Input Code -->
+<form id="form" onsubmit="return false;">
+    Type: <input  type="text" id="Type" />
+    <h1></h1>
+    Number: <input  type="number" id="Hours_per_day" />
+    <h1></h1>
+    <input  type="submit" onclick="input();" />
+</form>
 <script>
-window.onload = function () {
+  var a=2;
+  var b=3;
+  var c=4;
+  var d=4;
+  var e=6;
+function input() {
+    var Type_old = document.getElementById("Type").value;
+    var Hours_per_day_old = document.getElementById("Hours_per_day").value;
+    if ( Type_old === 'Life' ){
+      a = parseInt(Hours_per_day_old);
+      alert(Type_old + " " + Hours_per_day_old + " " + a);
+      //   console.log(a);
+    }
 
-var chart = new CanvasJS.Chart("chartContainer", {
-  exportEnabled: true,
-  animationEnabled: true,
-  title:{
-    text: "State Operating Funds"
-  },
-  legend:{
-    cursor: "pointer",
-    itemclick: explodePie
-  },
-  data: [{
-    type: "pie",
-    showInLegend: true,
-    toolTipContent: "{name}: <strong>{y}%</strong>",
-    indexLabel: "{name} - {y}%",
-    dataPoints: [
-      { y: 26, name: "Life", exploded: true },
-      { y: 20, name: "Car" },
-      { y: 5, name: "Fire" },
-      { y: 3, name: "Health" },
-      { y: 7, name: "Travel" },
-      { y: 17, name: "Home" },
-      { y: 22, name: "Other Local Assistance"}
-    ]
-  }]
-});
-chart.render();
-}
-
-function explodePie (e) {
-  if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
-    e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
-  } else {
-    e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
-  }
-  e.chart.render();
-
+    if ( Type_old === 'Home' ){
+      b = parseInt(Hours_per_day_old);
+    }
+    if ( Type_old === "Motor" ){
+      c = parseInt(Hours_per_day_old);
+    }
+    if ( Type_old === "Fire" ){
+      d = parseInt(Hours_per_day_old);
+    }
+    if ( Type_old === "Travel" ){
+      e = parseInt(Hours_per_day_old);
+    }
+    // alert(Type_old + Hours_per_day_old);
+    x = a+10;
+    console.log("X:"+x);
+    drawChart();
 }
 </script>
-</head>
+</div>
+
+</body>
+
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+
+    // Load the Visualization API and the piechart package.
+    google.charts.load('current', {'packages':['corechart']});
+
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.charts.setOnLoadCallback(drawChart);
+
+    // Callback that creates and populates a data table,
+    // instantiates the pie chart, passes in the data and
+    // draws it.
+
+    console.log("New a value :" + a);
+
+    function drawChart() {
+    // Create the data table.
+
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Type');
+    data.addColumn('number', 'Hours_per_day');
+    data.addRows([
+      ['Life', a],
+      ['Home', b],
+      ['Motor', c],
+      ['Fire', d],
+      ['Travel', e]
+    ]);
+    console.log("Newest:"+a);
+
+    // Set chart options
+    var options = {'title':'acko 2017-18 stats',
+                   'width':400,
+                   'height':300};
+
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+  </script></head>
 <body>
-<div id="chartContainer" style="height: 300px; width: 100%;"></div>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <div id="chart_div" style="width: 900px; height:500px;"> </div>
 </body>
 </html>
