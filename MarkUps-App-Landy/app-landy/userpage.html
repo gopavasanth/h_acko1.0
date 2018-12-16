@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><!-- particles.js container --> <div id="particles-js"></div> <!-- stats - count particles --> <div class="count-particles"> <span class="js-count-particles">--</span> particles </div> <!-- particles.js lib - https://github.com/VincentGarreau/particles.js --> <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib --> <script src="http://threejs.org/examples/js/libs/stats.min.js"></script></head>
+
+<div id="outer-div">
+<style>
+  /* ---- reset ---- */ body{ margin:0; font:normal 75% Arial, Helvetica, sans-serif; } canvas{ display: block; vertical-align: bottom; } /* ---- particles.js container ---- */ #particles-js{ position:fixed; width: 100%; height: 100%; background-color: #cacaca; z-index:-1;background-image: url(""); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; } /* ---- stats.js ---- */ .count-particles{ background: #000022; position: absolute; top: 48px; left: 0; width: 80px; color: #13E8E9; font-size: .8em; text-align: left; text-indent: 4px; line-height: 14px; padding-bottom: 2px; font-family: Helvetica, Arial, sans-serif; font-weight: bold; } .js-count-particles{ font-size: 1.1em; } #stats, .count-particles{ -webkit-user-select: none; margin-top: 5px; margin-left: 5px; } #stats{ border-radius: 3px 3px 0 0; overflow: hidden; } .count-particles{ border-radius: 0 0 3px 3px; }
+</style>
+
+<script>
+  particlesJS("particles-js", {"particles":{"number":{"value":80,"density":{"enable":true,"value_area":800}},"color":{"value":"#000000"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.5,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":true,"distance":150,"color":"#000000","opacity":0.4,"width":1},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});var count_particles, stats, update; stats = new Stats; stats.setMode(0); stats.domElement.style.position = 'absolute'; stats.domElement.style.left = '0px'; stats.domElement.style.top = '0px'; document.body.appendChild(stats.domElement); count_particles = document.querySelector('.js-count-particles'); update = function() { stats.begin(); stats.end(); if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) { count_particles.innerText = window.pJSDom[0].pJS.particles.array.length; } requestAnimationFrame(update); }; requestAnimationFrame(update);;
+</script>>
+<body>
+
+<div id="main-stats" align="center">
+<h1>acko statistics</h1>
+
+<div id="input">
+<!-- #Input Code -->
+<script>
+  var a=2;
+  var b=3;
+  var c=4;
+  var d=4;
+  var e=6;
+function input() {
+    var Type_old = document.getElementById("Type").value;
+    var Number_old = document.getElementById("Number").value;
+    if ( Type_old === 'Life' ){
+      a = parseInt(Number_old);
+      // alert(Type_old + " " + Number_old + " " + a);
+      //   console.log(a);
+    }
+    if ( Type_old === 'Home' ){
+      b = parseInt(Number_old);
+    }
+    if ( Type_old === "Motor" ){
+      c = parseInt(Number_old);
+    }
+    if ( Type_old === "Fire" ){
+      d = parseInt(Number_old);
+    }
+    if ( Type_old === "Travel" ){
+      e = parseInt(Number_old);
+    }
+    // alert(Type_old + Number_old);
+    // x = a+10;
+    // console.log("X:"+x);
+    drawChart();
+}
+</script>
+</div>
+
+</body>
+
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    // Load the Visualization API and the piechart package.
+    google.charts.load('current', {'packages':['corechart']});
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.charts.setOnLoadCallback(drawChart);
+    // Callback that creates and populates a data table,
+    // instantiates the pie chart, passes in the data and
+    // draws it.
+    // console.log("New a value :" + a);
+    function drawChart() {
+    // Create the data table.
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Type');
+    data.addColumn('number', 'Number');
+    data.addRows([
+      ['Life', a],
+      ['Home', b],
+      ['Motor', c],
+      ['Fire', d],
+      ['Travel', e]
+    ]);
+    // console.log("Newest:"+a);
+    // Set chart options
+    var options = {'title':'acko 2017-18 stats',
+                   'width':500,
+                   'height':300};
+    // Instantiate and draw our chart, passing in some options.
+    var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+  </script></head>
+<body>
+  <div id="chart_div" style="width: 500px; height:300px;"> </div>
+</body>
+</div>
+
+<!-- Health Statistics -->
+<style>
+.health-stats{
+    right:50%; /* Positions 50% from right (right edge will be at center) */
+    margin-left: 100px; /* Positions 200px to the left of center */
+}
+</style>
+
+<div class="health-stats" align="center">
+  <div id="input_2">
+  <!-- #Input Code -->
+  <h1>acko health-stats</h1>
+
+  <script>
+    var x=20; //2016
+    var y=5; //2017
+    var z=10; //2018
+  function input_2() {
+      var Type_2_old = document.getElementById("Type_2").value;
+      var Number_2_old = document.getElementById("Number_2").value;
+        if( Type_2_old === "2016" ){
+          x = parseInt(Number_2_old); //2016
+        }
+        if( Type_2_old === "2017" ){
+          y = parseInt(Number_2_old); //2017
+        }
+        if( Type_2_old === "2018" ){
+          z = parseInt(Number_2_old); //2018
+        }
+        console.log(z,y,x);
+        console.log("Helo");
+      drawChart_2();
+  }
+  </script>
+  </div>
+
+  </body>
+
+  <head>
+    <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> -->
+    <script type="text/javascript">
+      // Load the Visualization API and the piechart package.
+      google.charts.load('current', {'packages':['bar']});
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart_2);
+// Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart_2() {
+      var data = google.visualization.arrayToDataTable([
+        ['Year', 'Visitations', { role: 'style' } ],
+        ['2016', x, 'color: gray'],
+        ['2017', y, 'color: #76A7FA'],
+        ['2018', z, 'opacity: 0.2'],
+      ]);
+      // Set chart options
+      var options = {'title':'acko health stats',
+                     'width':400,
+                     'height':300};
+      // Instantiate and draw our chart, passing in some options.
+         var chart = new google.charts.Bar(document.getElementById("chart_div_2"));
+      chart.draw(data, options);
+    }
+    </script></head>
+  <body>
+    <div id="chart_div_2" style="width: 500px; height:300px;"> </div>
+  </body>
+
+</div>
+
+<!-- Motor_Stats -->
+<style>
+.Motor_Stats {
+  left:50%;
+  margin-right: 100px;
+}
+</style>
+<div class="Motor_Stats" align="center">
+  <h1>acko Motor-Stats</h1>
+<div id="input_3">
+<!-- #Input Code -->
+<script>
+  var car_2018 =3,car_2017=4, car_2016=5, bike_2016=4, bike_2017=6, bike_2018=7;
+function input_3() {
+    var Type_3_old = document.getElementById("Type_3").value;
+    var Year_3_old = document.getElementById("Year_3").value;
+    var Number_3_old = document.getElementById("Number_3").value;
+    if (Year_3_old === "2016"){
+      if ( Type_3_old === 'car' ){
+        car_2016 = parseInt(Number_3_old);
+      }
+      if ( Type_3_old === 'bike' ){
+        bike_2016 = parseInt(Number_3_old);
+      }
+    }
+    if (Year_3_old === "2017"){
+      if ( Type_3_old === 'car' ){
+        car_2016 = parseInt(Number_3_old);
+      }
+      if ( Type_3_old === 'bike' ){
+        car_2017 = parseInt(Number_3_old);
+      }
+    }
+    if (Year_3_old === "2018"){
+      if ( Type_3_old === 'car' ){
+        car_2018 = parseInt(Number_3_old);
+      }
+      if ( Type_3_old === 'bike' ){
+        bike_2018 = parseInt(Number_3_old);
+      }
+    }
+    drawChart_3();
+}
+</script>
+</div>
+
+</body>
+
+<script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart_3);
+      function drawChart_3() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Number_3', 'Type_3'],
+          ['2016',  car_2016,    bike_2016],
+          ['2017',  car_2017,    bike_2017],
+          ['2018',  car_2018,    bike_2018]
+        ]);
+        var options = {
+          title: 'Company Performance',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart_3'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="curve_chart_3" style="width: 500px; height: 300px"></div>
+  </body>
+</div>
+
+<div class="travel-stats" align="center">
+  <div id="input_4">
+  <!-- #Input Code -->
+  <h1>acko travel-stats</h1>
+  <script>
+    var x2=20; //2016
+    var y2=5; //2017
+    var z2=10; //2018
+  function input_4() {
+      var Type_4_old = document.getElementById("Type_4").value;
+      var Number_4_old = document.getElementById("Number_4").value;
+        if( Type_4_old === "2016" ){
+          x2 = parseInt(Number_4_old); //2016
+        }
+        if( Type_4_old === "2017" ){
+          y2 = parseInt(Number_4_old); //2017
+        }
+        if( Type_4_old === "2018" ){
+          z2 = parseInt(Number_4_old); //2018
+        }
+      drawChart_4();
+  }
+  </script>
+  </div>
+
+  </body>
+
+  <head>
+    <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> -->
+    <script type="text/javascript">
+      // Load the Visualization API and the piechart package.
+      google.charts.load('current', {'packages':['bar']});
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart_4);
+// Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart_4() {
+      var data = google.visualization.arrayToDataTable([
+        ['Year', 'Visitations', { role: 'style' } ],
+        ['2016', x2, 'color: gray'],
+        ['2017', y2, 'color: #76A7FA'],
+        ['2018', z2, 'opacity: 0.2'],
+      ]);
+      // Set chart options
+      var options = {'title':'acko travel stats',
+                     'width':400,
+                     'height':300};
+      // Instantiate and draw our chart, passing in some options.
+         var chart = new google.charts.Bar(document.getElementById('chart_div_4'));
+      chart.draw(data, options);
+    }
+    </script></head>
+  <body>
+    <div id="chart_div_4" style="width: 500px; height:300px;"> </div>
+  </body>
+
+</div>
+
+
+<div class="Acko Fire_Stats" align="center">
+  <h1>acko Fire-Stats</h1>
+<div id="input_5">
+<!-- #Input Code -->
+<script>
+  var fire_2018 =3,fire_2017=4, fire_2016=5;
+function input_5() {
+    var Type_5_old = document.getElementById("Type_5").value;
+    var Year_5_old = document.getElementById("Year_5").value;
+    if (Year_5_old === "2016"){
+        fire_2016 = parseInt(Type_5_old);
+    }
+    if (Year_5_old === "2017"){
+        fire_2017 = parseInt(Type_5_old);
+    }
+    if (Year_5_old === "2018"){
+        fire_2018 = parseInt(Type_5_old);
+    }
+    drawChart_5();
+}
+</script>
+</div>
+
+</body>
+
+<script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart_5);
+      function drawChart_5() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Type_5'],
+          ['2016',  fire_2016],
+          ['2017',  fire_2017],
+          ['2018',  fire_2018]
+        ]);
+        var options = {
+          title: 'Company Performance',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart_5'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="curve_chart_5" style="width: 500px; height: 300px"></div>
+  </body>
+</div>
+</body>
+</div>
+</html>
