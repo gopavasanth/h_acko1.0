@@ -24,7 +24,6 @@
     Number: <input  type="number" id="Number" />
     <h1></h1>
     <input  type="submit" onclick="input();" />
-    <h1></h1>
 </form>
 <script>
   var a=2;
@@ -38,10 +37,8 @@ function input() {
     if ( Type_old === 'Life' ){
       a = parseInt(Number_old);
       // alert(Type_old + " " + Number_old + " " + a);
-        console.log("Session:"+session_active);
-
+      //   console.log(a);
     }
-
     if ( Type_old === 'Home' ){
       b = parseInt(Number_old);
     }
@@ -67,22 +64,16 @@ function input() {
 <head>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript">
-
     // Load the Visualization API and the piechart package.
     google.charts.load('current', {'packages':['corechart']});
-
     // Set a callback to run when the Google Visualization API is loaded.
     google.charts.setOnLoadCallback(drawChart);
-
     // Callback that creates and populates a data table,
     // instantiates the pie chart, passes in the data and
     // draws it.
-
     // console.log("New a value :" + a);
-
     function drawChart() {
     // Create the data table.
-
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'Type');
     data.addColumn('number', 'Number');
@@ -94,12 +85,10 @@ function input() {
       ['Travel', e]
     ]);
     // console.log("Newest:"+a);
-
     // Set chart options
     var options = {'title':'acko 2017-18 stats',
                    'width':500,
                    'height':300};
-
     // Instantiate and draw our chart, passing in some options.
     var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
     chart.draw(data, options);
@@ -138,7 +127,6 @@ function input() {
   function input_2() {
       var Type_2_old = document.getElementById("Type_2").value;
       var Number_2_old = document.getElementById("Number_2").value;
-
         if( Type_2_old === "2016" ){
           x = parseInt(Number_2_old); //2016
         }
@@ -148,7 +136,6 @@ function input() {
         if( Type_2_old === "2018" ){
           z = parseInt(Number_2_old); //2018
         }
-
       drawChart_2();
   }
   </script>
@@ -159,17 +146,13 @@ function input() {
   <head>
     <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> -->
     <script type="text/javascript">
-
       // Load the Visualization API and the piechart package.
       google.charts.load('current', {'packages':['bar']});
-
       // Set a callback to run when the Google Visualization API is loaded.
       google.charts.setOnLoadCallback(drawChart_2);
-
 // Callback that creates and populates a data table,
       // instantiates the pie chart, passes in the data and
       // draws it.
-
       function drawChart_2() {
       var data = google.visualization.arrayToDataTable([
         ['Year', 'Visitations', { role: 'style' } ],
@@ -177,12 +160,10 @@ function input() {
         ['2017', y, 'color: #76A7FA'],
         ['2018', z, 'opacity: 0.2'],
       ]);
-
       // Set chart options
       var options = {'title':'acko health stats',
                      'width':400,
                      'height':300};
-
       // Instantiate and draw our chart, passing in some options.
          var chart = new google.charts.Bar(document.getElementById('chart_div_2'));
       chart.draw(data, options);
@@ -213,10 +194,8 @@ function input() {
     Number: <input  type="number" id="Number_3" />
     <h1></h1>
     <input  type="submit" onclick="input_3();" />
-    <h1></h1>
 </form>
 <script>
-
   var car_2018 =3,car_2017=4, car_2016=5, bike_2016=4, bike_2017=6, bike_2018=7;
 function input_3() {
     var Type_3_old = document.getElementById("Type_3").value;
@@ -226,7 +205,6 @@ function input_3() {
       if ( Type_3_old === 'car' ){
         car_2016 = parseInt(Number_3_old);
       }
-
       if ( Type_3_old === 'bike' ){
         bike_2016 = parseInt(Number_3_old);
       }
@@ -235,7 +213,6 @@ function input_3() {
       if ( Type_3_old === 'car' ){
         car_2016 = parseInt(Number_3_old);
       }
-
       if ( Type_3_old === 'bike' ){
         car_2017 = parseInt(Number_3_old);
       }
@@ -244,12 +221,10 @@ function input_3() {
       if ( Type_3_old === 'car' ){
         car_2018 = parseInt(Number_3_old);
       }
-
       if ( Type_3_old === 'bike' ){
         bike_2018 = parseInt(Number_3_old);
       }
     }
-
     drawChart_3();
 }
 </script>
@@ -260,7 +235,6 @@ function input_3() {
 <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart_3);
-
       function drawChart_3() {
         var data = google.visualization.arrayToDataTable([
           ['Year', 'Number_3', 'Type_3'],
@@ -268,15 +242,12 @@ function input_3() {
           ['2017',  car_2017,    bike_2017],
           ['2018',  car_2018,    bike_2018]
         ]);
-
         var options = {
           title: 'Company Performance',
           curveType: 'function',
           legend: { position: 'bottom' }
         };
-
         var chart = new google.visualization.LineChart(document.getElementById('curve_chart_3'));
-
         chart.draw(data, options);
       }
     </script>
@@ -305,7 +276,6 @@ function input_3() {
   function input_2() {
       var Type_4_old = document.getElementById("Type_4").value;
       var Number_4_old = document.getElementById("Number_4").value;
-
         if( Type_4_old === "2016" ){
           x = parseInt(Number_4_old); //2016
         }
@@ -315,7 +285,6 @@ function input_3() {
         if( Type_4_old === "2018" ){
           z = parseInt(Number_4_old); //2018
         }
-
       drawChart_4();
   }
   </script>
@@ -326,17 +295,13 @@ function input_3() {
   <head>
     <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> -->
     <script type="text/javascript">
-
       // Load the Visualization API and the piechart package.
       google.charts.load('current', {'packages':['bar']});
-
       // Set a callback to run when the Google Visualization API is loaded.
       google.charts.setOnLoadCallback(drawChart_4);
-
 // Callback that creates and populates a data table,
       // instantiates the pie chart, passes in the data and
       // draws it.
-
       function drawChart_4() {
       var data = google.visualization.arrayToDataTable([
         ['Year', 'Visitations', { role: 'style' } ],
@@ -344,12 +309,10 @@ function input_3() {
         ['2017', y2, 'color: #76A7FA'],
         ['2018', z2, 'opacity: 0.2'],
       ]);
-
       // Set chart options
       var options = {'title':'acko travel stats',
                      'width':400,
                      'height':300};
-
       // Instantiate and draw our chart, passing in some options.
          var chart = new google.charts.Bar(document.getElementById('chart_div_4'));
       chart.draw(data, options);
@@ -372,10 +335,8 @@ function input_3() {
     Year: <input  type="text" id="Year_5" />
     <h1></h1>
     <input  type="submit" onclick="input_5();" />
-    <h1></h1>
 </form>
 <script>
-
   var fire_2018 =3,fire_2017=4, fire_2016=5;
 function input_5() {
     var Type_5_old = document.getElementById("Type_5").value;
@@ -389,7 +350,6 @@ function input_5() {
     if (Year_5_old === "2018"){
         fire_2018 = parseInt(Type_5_old);
     }
-
     drawChart_5();
 }
 </script>
@@ -400,7 +360,6 @@ function input_5() {
 <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart_5);
-
       function drawChart_5() {
         var data = google.visualization.arrayToDataTable([
           ['Year', 'Type_5'],
@@ -408,23 +367,18 @@ function input_5() {
           ['2017',  fire_2017],
           ['2018',  fire_2018]
         ]);
-
         var options = {
           title: 'Company Performance',
           curveType: 'function',
           legend: { position: 'bottom' }
         };
-
         var chart = new google.visualization.LineChart(document.getElementById('curve_chart_5'));
-
         chart.draw(data, options);
-
       }
     </script>
   </head>
   <body>
     <div id="curve_chart_5" style="width: 500px; height: 300px"></div>
-    <h1></h1>
   </body>
 </div>
 </body>
