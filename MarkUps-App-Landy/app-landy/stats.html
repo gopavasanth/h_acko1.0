@@ -102,7 +102,6 @@ function input() {
 <!-- Health Statistics -->
 <style>
 .health-stats{
-    /* top:5px */
     right:50%; /* Positions 50% from right (right edge will be at center) */
     margin-left: 100px; /* Positions 200px to the left of center */
 }
@@ -117,7 +116,7 @@ function input() {
       <h1></h1>
       Number: <input  type="number" id="Number_2" />
       <h1></h1>
-      <input  type="submit" onclick="input_2();" />
+      <input type="submit" onclick="input_2();" />
       <h1></h1>
   </form>
   <script>
@@ -136,6 +135,8 @@ function input() {
         if( Type_2_old === "2018" ){
           z = parseInt(Number_2_old); //2018
         }
+        console.log(z,y,x);
+        console.log("Helo");
       drawChart_2();
   }
   </script>
@@ -165,7 +166,7 @@ function input() {
                      'width':400,
                      'height':300};
       // Instantiate and draw our chart, passing in some options.
-         var chart = new google.charts.Bar(document.getElementById('chart_div_2'));
+         var chart = new google.charts.Bar(document.getElementById("chart_div_2"));
       chart.draw(data, options);
     }
     </script></head>
@@ -258,7 +259,7 @@ function input_3() {
 </div>
 
 <div class="travel-stats" align="center">
-  <div id="input_2">
+  <div id="input_4">
   <!-- #Input Code -->
   <h1>acko travel-stats</h1>
   <form id="form" onsubmit="return false;">
@@ -273,17 +274,17 @@ function input_3() {
     var x2=20; //2016
     var y2=5; //2017
     var z2=10; //2018
-  function input_2() {
+  function input_4() {
       var Type_4_old = document.getElementById("Type_4").value;
       var Number_4_old = document.getElementById("Number_4").value;
         if( Type_4_old === "2016" ){
-          x = parseInt(Number_4_old); //2016
+          x2 = parseInt(Number_4_old); //2016
         }
         if( Type_4_old === "2017" ){
-          y = parseInt(Number_4_old); //2017
+          y2 = parseInt(Number_4_old); //2017
         }
         if( Type_4_old === "2018" ){
-          z = parseInt(Number_4_old); //2018
+          z2 = parseInt(Number_4_old); //2018
         }
       drawChart_4();
   }
