@@ -24,6 +24,7 @@
     Number: <input  type="number" id="Number" />
     <h1></h1>
     <input  type="submit" onclick="input();" />
+    <h1></h1>
 </form>
 <script>
   var a=2;
@@ -37,7 +38,8 @@ function input() {
     if ( Type_old === 'Life' ){
       a = parseInt(Number_old);
       // alert(Type_old + " " + Number_old + " " + a);
-      //   console.log(a);
+        console.log("Session:"+session_active);
+
     }
 
     if ( Type_old === 'Home' ){
@@ -211,6 +213,7 @@ function input() {
     Number: <input  type="number" id="Number_3" />
     <h1></h1>
     <input  type="submit" onclick="input_3();" />
+    <h1></h1>
 </form>
 <script>
 
@@ -369,6 +372,7 @@ function input_3() {
     Year: <input  type="text" id="Year_5" />
     <h1></h1>
     <input  type="submit" onclick="input_5();" />
+    <h1></h1>
 </form>
 <script>
 
@@ -414,11 +418,13 @@ function input_5() {
         var chart = new google.visualization.LineChart(document.getElementById('curve_chart_5'));
 
         chart.draw(data, options);
+
       }
     </script>
   </head>
   <body>
     <div id="curve_chart_5" style="width: 500px; height: 300px"></div>
+    <h1></h1>
   </body>
 </div>
 </body>
