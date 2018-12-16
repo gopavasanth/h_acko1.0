@@ -471,7 +471,15 @@ right: 0;
                 <textarea class="form-control" rows="3" placeholder="Your Message"></textarea>
               </div>
               <div class="send-area">
-                <button type="submit" class="send-btn">Send Now</button>
+                
+                <button type="submit" class="send-btn" onclick="send_email()">Send Now</button>
+                <!-- <alert> Successfully sent</alert> -->
+              <script>
+              function send_email(){
+              alert ("email-sent");
+                public var session_active=1;
+              }
+              </script>
               </div>
             </form>
           </div>
