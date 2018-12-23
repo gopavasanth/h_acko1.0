@@ -2,10 +2,8 @@
 Template License 
 --------------------------------------------
 
-Template Name : App Landy
-Author : MarkUps
-Author URL : http://www.markups.io/
-License URL : http://www.markups.io/license   
+Template Name : acko
+Author : amFOSS
 Note : Before using we recommend check our template license page.
 
 
